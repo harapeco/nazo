@@ -30,7 +30,7 @@ $(document).ready(function(){
 	can.mousedown(function(e){
 		var data = createData('down', e, ctx, rect);
 		draw(ctx, data);
-		sendSocket(socket, data);
+		sendMessage(socket, data);
 		down = true;
 	});
 	// mousemove event
@@ -38,14 +38,14 @@ $(document).ready(function(){
 		if (!down) return;
 		var data = createData('move', e, ctx, rect);
 		draw(ctx, data);
-		sendSocket(socket, data);
+		sendMessage(socket, data);
 	});
 	// mouseup event
 	can.mouseup(function(e){
 		if (!down) return;
 		var data = createData('up', e, ctx, rect);
 		draw(ctx, data);
-		sendSocket(socket, data);
+		sendMessage(socket, data);
 		down = false;
 	});
 });
